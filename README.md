@@ -1,0 +1,1 @@
+这是我学习YouTube上 [Intro to Rust](https://www.youtube.com/playlist?list=PLJbE2Yu2zumDF6BX6_RdPisRVHgzV02NW) 系列课程的笔记。
