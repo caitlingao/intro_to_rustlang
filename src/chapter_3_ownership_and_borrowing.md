@@ -8,7 +8,7 @@ Rust 所有权规则包括：
 * Rust 中的每一个值都有一个对应的变量作为它的所有者；
 * 在同一个时间内，值有且仅有一个所有者；
 * 当所有者离开自己的作用域时，它持有的传正就会被释放掉；
-```Rust
+```rust
 fn main() {
     let x = 1;
     {
@@ -20,7 +20,7 @@ fn main() {
 变量从出生到死亡的整个阶段叫一个变量的`生命周期`，上面代码中变量`a`的生命周期在`{}`这段块语句内，当块语句结束时，变量`a`的生命周期也就结束了，所以在`x+a`这处代码会报错。
 #### 移动语义
 一个变量可以把它拥有的值转移给另外一个变量，称为`所有权转移`，它是所有类型的**默认语义**
-```Rust
+```rust
 fn main() {
     let s1 = String::from("hello");
     let s2 = s1;
@@ -28,7 +28,7 @@ fn main() {
 }
 ```
 执行这段代码会报错
-```Rust
+```
 error[E0382]: borrow of moved value: `s1`
  --> src/main.rs:4:20
   |
@@ -50,17 +50,21 @@ error[E0382]: borrow of moved value: `s1`
 |capacity|5|
 
 当确实需要深度拷贝堆上的数据，而不仅仅是栈数据时，可以使用`clone`方法来复制堆上的数据
-```Rust
-let s1 = String::from("hello");
-let s2 = s1.clone();
-println!("s1 = {}, s2 = {}", s1, s2);
+```rust
+fn main() {
+    let s1 = String::from("hello");
+    let s2 = s1.clone();
+    println!("s1 = {}, s2 = {}", s1, s2);
+}
 ```
 #### 复制语义
 任何时候需要复制都去调用`clone`方法会比较烦琐，对于一些简单类型，如：整数、bool、等在赋值时会采用复制语义。这些类型在编译期时可以确定自己的大小，并且能够将自己完整的数据存储在栈中，这些值的复制操作是非常快的。
-```Rust
-let x = 5; // 将整数5绑定到变量x上
-let y = x; // 创建一个x的拷贝，将它绑定到y上。
-println!("x = {}, y = {}", x, y);
+```rust
+fn main() {
+    let x = 5; // 将整数5绑定到变量x上
+    let y = x; // 创建一个x的拷贝，将它绑定到y上。
+    println!("x = {}, y = {}", x, y);
+}
 ```
 Rust提供了名为`Copy`的`trait`，一旦某种类型拥有了`Copy`这种`trait`，它的变量就可以在赋值时给其它变量后保持可用性。
 
@@ -74,7 +78,7 @@ Rust提供了名为`Copy`的`trait`，一旦某种类型拥有了`Copy`这种`tr
 **如果一种类型本身或者这种类型的任意成员实现了`Drop trait`，这种类型不允许实现`Copy trait`**
 #### 引用与借用
 变量对其管理的内存拥有所有权，这个所有权可以被转移，也可以被借用（borrow）`&`或者`&mut`代表的就是引用语义，它允许在不获取所有权的前提下使用值。
-```Rust
+```rust
 fn main() {
     let s1 = String::from("hello");
     let len = calculate_length(&s1); // &s1 在不转移所有权情况下创建一个指向s1值的引用
@@ -86,7 +90,7 @@ fn calculate_length(s: &String) -> usize { // s 是一个指向 String 的引用
 } // s 离开作用域，但是由于它不持有自己所指向值的所有权，它离开自己的作用域时不会销毁指向的数据
 ```
 可变引用
-```Rust
+```rust
 fn main() {
     let mut s = String::from("hello");
     change(&mut s); // 使用 &mut 给函数传入一个可变引用
@@ -97,7 +101,7 @@ fn change(s: &mut String) { // &mut String 接收一个可变引用作为参数
 }
 ```
 #### 更多例子
-```Rust
+```rust
 fn take(v: Vec<i32>) {
     println!("We took v: {}", v[10] + v[100]);
 }
@@ -113,7 +117,7 @@ fn main() {
 }
 ```
 变量v是动态数组，数据存储在堆上，`take(v)`是 move 语义，这段语句下面的 `println!("{}", v[0]);`这句会报错，因为v已被move
-```Rust
+```rust
 fn cop(a: i32, b: i32) {
     println!("{}", a + b);
 }
@@ -125,7 +129,7 @@ fn main() {
     println!("We have a: {} and b: {}", a, b); // 变量a, b 仍然可用
 }
 ```
-```Rust
+```rust
 fn re(v: Vec<i32>) -> Vec<i32> {
     println!("{}", v[120] + v[111]);
     v
@@ -152,7 +156,7 @@ fn main() {
     println!("Still own: v: {} {}", v[0], v[1]);
 }
 ```
-```Rust
+```rust
 fn main() {
     let v = vec![4, 5, 3, 6, 7, 4, 8, 6, 4, 2, 4, 2, 4, 5, 3, 7, 7];
     for &i in &v {

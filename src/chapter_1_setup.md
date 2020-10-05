@@ -49,7 +49,7 @@ edition = "2018"
 文件中`[package]`是一个区域标签，它表示接下来的语句会被用于配置当前的程序包，它包括包的名字、版本号、作者信息等。`[dependencies]`同样也是一个区域标签，它表示随后的区域会被用来声明项目的依赖。
 
 现在看一下src/main.rs文件内容
-```Rust
+```rust
 // src/main.rs
 fn main() {
     println!("Hello, world!");
@@ -71,11 +71,13 @@ Hello, world!
 
 ### 变量声明
 Rust中的变量必须先声明后使用，局部变量声明以`let`关键字开头，表达式语句必须以分号结尾。如下面代码
-```Rust
-let x = 5; // 声明了局部变量`x`
+```rust
+fn main() {
+    let x = 5; // 声明了局部变量`x`
+}
 ```
 Rust中变量默认是不可变的，若想变量可变，必须使用`mut`关键字来声明变量。
-```Rust
+```rust
 fn main {
     let x = 5;
     // x = 6; // cannot assign twice to immutable variable `x`
@@ -86,7 +88,7 @@ fn main {
 ```
 ### 类型推导
 Rust可以进行类型推导，它只允许`局部变量/全局变量`实现类型推导，而`函数签名`等场景下不允许。我们也可以根据实际情况标注需要的类型
-```Rust
+```rust
 fn main() {
     let x = 5; // 类型推导，变量x值的类型是i32
     let y: u32 = 10; // 明确标注，此时变量y值的类型是u32
