@@ -5,3 +5,4 @@
 - [Ownership and Borrowing](./chapter_3_ownership_and_borrowing.md)
 - [Structs Methods Functions and the Display Debug Traits](./chapter_4_struct_method_and_display_trait.md)
 - [Control Flow, Conditionals and Pattern Matching](./chapter_5_control_flow_conditionals_pattern_matching.md)
+- [Enum and Option](./chapter_6_enum_option.md)

@@ -7,3 +7,4 @@
 3. [所有权和数据转移](./src/chapter_3_ownership_and_borrowing.md)
 4. [使用结构体来组织相关联的数据](./src/chapter_4_struct_method_and_display_trait.md)
 5. [控制流与模式匹配](./src/chapter_5_control_flow_conditionals_pattern_matching.md)
+6. [Enum 与 Option](./src/chapter_6_enum_option.md)
