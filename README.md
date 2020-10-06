@@ -8,3 +8,4 @@
 4. [使用结构体来组织相关联的数据](./src/chapter_4_struct_method_and_display_trait.md)
 5. [控制流与模式匹配](./src/chapter_5_control_flow_conditionals_pattern_matching.md)
 6. [Enum 与 Option](./src/chapter_6_enum_option.md)
+7. [Vector HashMap 与 Result enum](./src/chapter_7_vectors_hash_map_result_enum.md)
