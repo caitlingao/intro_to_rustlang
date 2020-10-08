@@ -7,3 +7,4 @@
 - [Control Flow, Conditionals and Pattern Matching](./chapter_5_control_flow_conditionals_pattern_matching.md)
 - [Enum and Option](./chapter_6_enum_option.md)
 - [Vector HashMap and Result enum](./chapter_7_vectors_hash_map_result_enum.md)
+- [Snake game](./chapter_8_snake_game.md)
