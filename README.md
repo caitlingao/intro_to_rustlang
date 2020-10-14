@@ -10,3 +10,4 @@
 6. [Enum 与 Option](./src/chapter_6_enum_option.md)
 7. [Vector HashMap 与 Result enum](./src/chapter_7_vectors_hash_map_result_enum.md)
 8. [实战-贪吃蛇游戏](./src/chapter_8_snake_game.md)
+8. [trait 与 generic](./src/chapter_9_trait_generic.md)

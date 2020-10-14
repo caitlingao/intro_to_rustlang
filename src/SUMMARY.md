@@ -8,3 +8,4 @@
 - [Enum and Option](./chapter_6_enum_option.md)
 - [Vector HashMap and Result enum](./chapter_7_vectors_hash_map_result_enum.md)
 - [Snake game](./chapter_8_snake_game.md)
+- [Trait and Generic](./chapter_9_trait_generic.md)
