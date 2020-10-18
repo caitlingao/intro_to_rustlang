@@ -10,3 +10,4 @@
 - [Snake game](./chapter_8_snake_game.md)
 - [Trait and Generic](./chapter_9_trait_generic.md)
 - [Pointer and Interators](./chapter_10_pointer_interators.md)
+- [Lifetimes](./chapter_11_lifetimes.md)

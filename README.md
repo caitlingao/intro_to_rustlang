@@ -12,3 +12,4 @@
 8. [实战-贪吃蛇游戏](./src/chapter_8_snake_game.md)
 9. [trait 与 generic](./src/chapter_9_trait_generic.md)
 10. [pointer 与 interators](./src/chapter_10_pointer_interators.md)
+11. [生命周期](./src/chapter_11_lifetimes.md)
